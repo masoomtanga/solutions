@@ -12,6 +12,8 @@ namespace SolutionSource
 
 		public static void EqualityCheck(IReadOnlyCollection<string> a, IReadOnlyList<string> b)
 		{
+			if(a.Count!=b.Count) return;
+
 			var result = new List<string>(a.Count);
 			result.AddRange(a.Select((t, i) => PerformComparison(t, b[i])).Select(swapSuccess => swapSuccess ? "Yes" : "No"));
 		}
